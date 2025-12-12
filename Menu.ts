@@ -53,7 +53,7 @@ export function main () {
                 console.log("Digite o preço do produto: ");
                 preco = readlinesync.questionFloat("");
 
-                produtos.cadastrar(new Produto(nome, categoria, fabricante, preco))
+                produtos.cadastrar(new Eletronicos(produtos.gerarNumero(), preco, nome, categoria, fabricante))
 
                 keyPress();
                 break
@@ -70,9 +70,23 @@ export function main () {
                 console.log("Digite o numero do produto: ");
                 numero = readlinesync.questionInt("");
 
-                let produto = produto.buscarNoArray(numero);
+                let produtoAtual = produtos.buscarNoArray(numero);
                 
-                
+                if (produtoAtual!= null){
+                    console.log("Digite o nome do produto: ")
+                    nome = readlinesync.question("");
+
+                    console.log("Digite o preço do produto: ")
+                    preco = readlinesync.questionFloat("");
+
+                    console.log("Digite a categoria do produto: ")
+                    categoria = readlinesync.question("");
+
+                    console.log("Digite o fabricante do produto: ")
+                    fabricante = readlinesync.question("");
+
+                    produtos.atualizar(new Eletronicos(numero, preco, nome, categoria, fabricante));
+                }
 
                 keyPress();
                 break
@@ -90,6 +104,12 @@ export function main () {
 
             case 5:
                 console.log("Remover produto");
+                
+                console.log("Digite o numero do produto: ");
+                numero = readlinesync.questionInt("");
+                produtos.remover(numero);
+                
+                keyPress();
                 break
 
             default: 

@@ -36,7 +36,13 @@ export class Controller implements ProdutoRepository{
             console.log("\n O produto numero: " + produto.numero + "não foi encontrado!");
     }
     remover(numero: number): void {
-        throw new Error("Method not implemented.");
+        let buscaProduto = this.buscarNoArray(numero);
+
+        if(buscaProduto != null) {
+            this.listaProdutos.splice(this.listaProdutos.indexOf(buscaProduto), 1);
+            console.log("\n O produto numero: " + numero + "foi apagado com sucesso!");
+        } else 
+            console.log("O produto numero: " + numero + "não foi encontrado!");
     }
     //Gerar o numero aleatorio do produto:
     public gerarNumero(): number{
