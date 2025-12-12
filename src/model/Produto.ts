@@ -1,8 +1,8 @@
 export abstract class Produto {
     //atributos privados: 
     private _numero: number;
-    private _preco: number;
     private _nome: string;
+    private _preco: number;
     private _categoria: string;
 
     //método construtor: 

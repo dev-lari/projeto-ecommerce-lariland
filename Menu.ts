@@ -1,5 +1,6 @@
 import readlinesync = require('readline-sync');
-import { Produto } from './src/model/Produto';
+import { Eletronicos } from './src/model/Eletronicos';
+
 
 export function main () {
     let opcao: number;
